@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bling-utils"
-version = "0.1.0"
+version = "0.2.0"
 description = "Utilitários para precificação e upload de imagens para S3"
 readme = "README.md"
 requires-python = ">=3.9"
