@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bling-utils"
-version = "0.2.0"
-description = "Utilitários para precificação e upload de imagens para S3"
+version = "0.3.0"
+description = "Utilitários para upload de imagens para AWS S3"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
@@ -21,4 +21,4 @@ dependencies = [
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["price_generator*", "amazon_s3*"]
+include = ["amazon_s3*"]

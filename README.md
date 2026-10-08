@@ -1,29 +1,36 @@
 # bling-utils
 
-Utilitários para cálculo de preço e upload de imagens para AWS S3.
+Utilitários para upload de imagens em lote para AWS S3.
+
+> O módulo de precificação foi movido para um repositório próprio:
+> [GabMalta/price_generator](https://github.com/GabMalta/price_generator).
 
 ## Instalação via Git
 
 ```bash
-pip install git+https://github.com/<usuario>/<repositorio>.git
+pip install git+https://github.com/GabMalta/bling_utils.git
 ```
 
 Para instalar uma branch/tag específica:
 
 ```bash
-pip install git+https://github.com/<usuario>/<repositorio>.git@main
+pip install git+https://github.com/GabMalta/bling_utils.git@master
 ```
 
-## Módulos
+## Configuração
 
-- `price_generator`: funções de cálculo de custo e preço.
-- `amazon_s3`: funções para upload de imagens em lote para S3.
+Copie `.env.example` para `.env` e preencha as credenciais:
+
+```
+AWS_ACCESS_KEY=
+AWS_SECRET_KEY=
+BUCKET_NAME=
+```
 
 ## Exemplo rápido
 
 ```python
-from price_generator import calculate_price
+from amazon_s3 import upload_folder_to_s3_parallel
 
-preco, custo = calculate_price(cost_price=20.0, multiplier=1.5, profit_margin=20)
-print(preco, custo)
+upload_folder_to_s3_parallel("./imagens", "produtos/")
 ```
